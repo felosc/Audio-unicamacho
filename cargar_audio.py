@@ -29,3 +29,30 @@ while True:
     elif n == "exit":
         exit()
 
+#esto fue sacado de caht gpt ---> es codigo para graficar las ondas del archivo mp3
+import numpy as np
+import matplotlib.pyplot as plt
+from pydub import AudioSegment
+
+# Cargar el archivo MP3
+file_path = "audios/Gary B.B. Coleman - The Sky is Crying.mp3"  # Reemplaza con la ruta de tu archivo MP3
+audio = AudioSegment.from_mp3(file_path)
+
+# Convertir a mono (si es estéreo)
+if audio.channels == 2:
+    audio = audio.set_channels(1)
+
+# Obtener los datos de audio en formato de muestra (en bytes)
+samples = np.array(audio.get_array_of_samples())
+
+# Crear un eje temporal para la gráfica
+time = np.linspace(0, len(samples) / audio.frame_rate, num=len(samples))
+
+# Graficar la onda
+plt.figure(figsize=(10, 6))
+plt.plot(time, samples)
+plt.title(f'Onda de audio de {file_path}')
+plt.xlabel('Tiempo (s)')
+plt.ylabel('Amplitud')
+plt.grid(True)
+plt.show()
