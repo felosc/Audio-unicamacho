@@ -21,12 +21,11 @@ pygame.init()
 pygame.mixer.music.load(file)
 
 while True:
-    n = input(inputdit)
+    n = input("escriba Play or Stop reproducir o detener la cancion. \nescriba Exit para detener el programa:\n")
     if n == "play":
         pygame.mixer.music.play()
     elif n ==  "stop":
         pygame.mixer.music.pause()
     elif n == "exit":
         exit()
-
 
