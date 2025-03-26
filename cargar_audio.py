@@ -23,7 +23,7 @@ pygame.mixer.music.load(file)
 while True:
     n = input(inputdit)
     if n == "play":
-        pygame.mixer.music.paly()
+        pygame.mixer.music.play()
     elif n ==  "stop":
         pygame.mixer.music.pause()
     elif n == "exit":
