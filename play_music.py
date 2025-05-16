@@ -6,7 +6,11 @@ import matplotlib.pyplot as plt
 import pygame
 import sys
 
-
+nombre_archivo = "ad05.mp3"
+# Cargar el archivo de audio
+archivo_audio = "audios/"+nombre_archivo
+y, sr = librosa.load(archivo_audio)
+print(archivo_audio)
 
 # Contar archivos en el directorio
 inputdit = "audios"
